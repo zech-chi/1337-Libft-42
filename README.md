@@ -1,3 +1,2 @@
 # Libft
 
-hello libft
