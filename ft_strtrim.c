@@ -27,7 +27,7 @@ int ft_is_exist(const char *s, char c)
 }
 char *ft_strtrim(char const *s1, char const *set)
 {
-    size_t len;
+    long long len;
     long long left;
     long long right;
     size_t size;
