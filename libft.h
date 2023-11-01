@@ -6,7 +6,7 @@
 /*   By: zech-chi <zech-chi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/30 14:52:28 by zech-chi          #+#    #+#             */
-/*   Updated: 2023/10/31 20:42:57 by zech-chi         ###   ########.fr       */
+/*   Updated: 2023/10/31 21:44:25 by zech-chi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 # define LIBFT_H
 # include <stdlib.h>
 /* FUNCTIONS */
+char	*ft_strchr(const char *s, int c);
+char	*ft_strdup(const char *s1);
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
 int		ft_atoi(const char *str);
 int		ft_tolower(int c);
