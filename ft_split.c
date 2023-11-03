@@ -6,7 +6,7 @@
 /*   By: zech-chi <zech-chi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/01 23:49:42 by zech-chi          #+#    #+#             */
-/*   Updated: 2023/11/02 12:56:13 by zech-chi         ###   ########.fr       */
+/*   Updated: 2023/11/03 19:46:34 by zech-chi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,28 +38,24 @@ int	count_words(char const *s, char c)
 	return (counter);
 }
 
-void	free_ans(char	**ans, size_t	size)
+void	free_ptr(char **ptr, size_t size)
 {
 	size_t	i;
 
-	if (size == 0)
-		return;
 	i = 0;
 	while (i < size)
-		free(ans[i++]);
-	free(ans);
-	return;
+		free(ptr[i++]);
 }
 
-char	**fill_ans(char **ans, char const *s, char c)
+void	fill_ptr(char **ptr, size_t size, char const *s, char c)
 {
 	size_t	left;
 	size_t	right;
-	size_t	i;
-	size_t	j;
+	size_t	row;
+	size_t	col;
 	char	*temp;
 
-	i = 0;
+	row = 0;
 	left = 0;
 	while (s[left])
 	{
@@ -73,41 +69,49 @@ char	**fill_ans(char **ans, char const *s, char c)
 		temp = malloc(right - left + 1);
 		if (temp == NULL)
 		{
-			free_ans(ans, i);
-			break;
+			free_ptr(ptr, row);
+			free(ptr);
+			return;
 		}
-		j = 0;
+		col = 0;
 		while (left < right)
-			ans[i][j++] = s[left++];
+			temp[col++] = s[left++];
+		temp[col] = 0;
+		ptr[row] = temp;
+		row++;
+	}
+	ptr[row] = NULL;
+}
+
+char	**ft_split(char const *s, char c)
+{
+	size_t	size;
+	char	**ptr;
+
+	size = count_words(s, c);
+	ptr = malloc((size + 1) * sizeof(char *));
+	if (ptr == NULL)
+		return (NULL);
+
+	fill_ptr(ptr, size, s, c);
+	return (ptr);
+}
+
+int main(int ac, char **av)
+{
+	if (ac != 3)
+		return (0);
+	
+	char **ptr = ft_split(av[1], av[2][0]);
+	
+	if (ptr == NULL)
+		return (0);
+	
+	size_t i = 0;
+	while (ptr[i])
+	{
+		printf("\"%s\"\n", ptr[i]);
 		i++;
 	}
-	ans[i] = 0;
-	return (ans);
+	return (0);
 }
-
-char **ft_split(char const *s, char c)
-{
-	char	**ans;
-	int		n_words;
-
-	n_words = count_words(s, c);
-	ans = malloc((n_words + 1) * sizeof(char *));
-	if (ans == NULL)
-		return (NULL);
-	fill_ans(ans, s, c);
-	return (ans);
-}
-
-//int main(int ac, char **av)
-//{
-//	if (ac != 3)
-//		return (0);
-//	char **ans = ft_split(av[1], av[2][0]);
-//	int i = 0;
-//	while (ans[i])
-//	{
-//		printf("%s\n", ans[i]);
-//		i++;
-//	}
-//	return (0);
-//}

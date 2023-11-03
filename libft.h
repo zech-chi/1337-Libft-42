@@ -6,7 +6,7 @@
 /*   By: zech-chi <zech-chi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/30 14:52:28 by zech-chi          #+#    #+#             */
-/*   Updated: 2023/11/03 18:16:23 by zech-chi         ###   ########.fr       */
+/*   Updated: 2023/11/03 18:29:48 by zech-chi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 # include <stdlib.h>
 # include <unistd.h>
 /* FUNCTIONS */
+void	ft_striteri(char *s, void (*f)(unsigned int, char*));
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 int		ft_memcmp(const void *s1, const void *s2, size_t n);
 char	*ft_itoa(int n);
