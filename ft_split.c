@@ -6,7 +6,7 @@
 /*   By: zech-chi <zech-chi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/01 23:49:42 by zech-chi          #+#    #+#             */
-/*   Updated: 2023/11/03 23:47:18 by zech-chi         ###   ########.fr       */
+/*   Updated: 2023/11/04 19:12:34 by zech-chi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ void	fill_ptr(char **ptr, char const *s, char c)
 		while (s[left] && s[left] == c)
 			left++;
 		if (s[left] == 0)
-			break;
+			break ;
 		right = left;
 		while (s[right] && s[right] != c)
 			right++;
@@ -71,7 +71,7 @@ void	fill_ptr(char **ptr, char const *s, char c)
 		{
 			free_ptr(ptr, row);
 			free(ptr);
-			return;
+			return ;
 		}
 		col = 0;
 		while (left < right)
@@ -92,7 +92,6 @@ char	**ft_split(char const *s, char c)
 	ptr = malloc((size + 1) * sizeof(char *));
 	if (ptr == NULL)
 		return (NULL);
-
 	fill_ptr(ptr, s, c);
 	return (ptr);
 }
@@ -101,12 +100,9 @@ char	**ft_split(char const *s, char c)
 //{
 //	if (ac != 3)
 //		return (0);
-	
 //	char **ptr = ft_split(av[1], av[2][0]);
-	
 //	if (ptr == NULL)
 //		return (0);
-	
 //	size_t i = 0;
 //	while (ptr[i])
 //	{

@@ -6,7 +6,7 @@
 /*   By: zech-chi <zech-chi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/01 22:37:36 by zech-chi          #+#    #+#             */
-/*   Updated: 2023/11/04 16:51:00 by zech-chi         ###   ########.fr       */
+/*   Updated: 2023/11/04 19:13:17 by zech-chi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,4 +25,3 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	ft_strlcat(ptr, s2, size + 1);
 	return (ptr);
 }
- 

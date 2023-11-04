@@ -6,7 +6,7 @@
 /*   By: zech-chi <zech-chi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/01 21:47:16 by zech-chi          #+#    #+#             */
-/*   Updated: 2023/11/04 17:55:03 by zech-chi         ###   ########.fr       */
+/*   Updated: 2023/11/04 19:13:53 by zech-chi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,12 @@
 //#include <stdlib.h>
 //#include <stdio.h>
 
-size_t ft_strlcat(char *dst, const char *src, size_t dstsize)
+size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
-	size_t d;
-	size_t s;
-	size_t dst_len;
-	size_t src_len;
+	size_t	d;
+	size_t	s;
+	size_t	dst_len;
+	size_t	src_len;
 
 	dst_len = ft_strlen(dst);
 	src_len = ft_strlen(src);

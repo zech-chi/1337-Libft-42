@@ -6,7 +6,7 @@
 /*   By: zech-chi <zech-chi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/01 20:16:43 by zech-chi          #+#    #+#             */
-/*   Updated: 2023/11/01 20:36:42 by zech-chi         ###   ########.fr       */
+/*   Updated: 2023/11/04 19:14:51 by zech-chi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,16 @@
 
 char	*ft_strrchr(const char *s, int c)
 {
-	size_t	last;
 	size_t	i;
 
-	last = 0;
-	i = 0;
-	while (s[i])
+	i = ft_strlen(s);
+	while (i > 0)
 	{
-		if (s[i] == c)
-			last = i;
-		i++;
+		if (s[i] == (char)c)
+			return ((char *)(s + i));
+		i--;
 	}
-	if (last == 0 && s[0] != c)
-		return (0);
-	return ((char *)(s + last));
+	if (s[i] == (char)c)
+		return ((char *)(s));
+	return (0);
 }

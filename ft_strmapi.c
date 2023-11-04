@@ -6,7 +6,7 @@
 /*   By: zech-chi <zech-chi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/03 14:52:15 by zech-chi          #+#    #+#             */
-/*   Updated: 2023/11/03 23:50:50 by zech-chi         ###   ########.fr       */
+/*   Updated: 2023/11/04 19:14:22 by zech-chi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,11 +34,10 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	return (ptr);
 }
 
-char change(unsigned int i, char c)
-{
-	return (c + i);
-}
-
+//char	change(unsigned int i, char c)
+//{
+//	return (c + i);
+//}
 //int main()
 //{
 //	char (*f)(unsigned int, char);

@@ -6,7 +6,7 @@
 /*   By: zech-chi <zech-chi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/03 12:20:38 by zech-chi          #+#    #+#             */
-/*   Updated: 2023/11/03 12:45:55 by zech-chi         ###   ########.fr       */
+/*   Updated: 2023/11/04 19:06:55 by zech-chi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 
 int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	size_t	i;
+	size_t			i;
 	unsigned char	*us1;
 	unsigned char	*us2;
 

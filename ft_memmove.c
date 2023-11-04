@@ -6,7 +6,7 @@
 /*   By: zech-chi <zech-chi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/03 22:06:07 by zech-chi          #+#    #+#             */
-/*   Updated: 2023/11/04 16:19:43 by zech-chi         ###   ########.fr       */
+/*   Updated: 2023/11/04 19:08:28 by zech-chi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 
 	d = (unsigned char *)dst;
 	s = (unsigned char *)src;
-	
 	ft_memcpy(temp, src, len);
 	ft_memcpy(dst, temp, len);
 	return (dst);
