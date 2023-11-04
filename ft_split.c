@@ -6,7 +6,7 @@
 /*   By: zech-chi <zech-chi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/01 23:49:42 by zech-chi          #+#    #+#             */
-/*   Updated: 2023/11/04 19:12:34 by zech-chi         ###   ########.fr       */
+/*   Updated: 2023/11/04 19:59:27 by zech-chi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,29 @@ void	free_ptr(char **ptr, size_t size)
 	i = 0;
 	while (i < size)
 		free(ptr[i++]);
+	free(ptr);
+}
+
+void	fill_temp(char const *s, char *temp, size_t *left, size_t *right)
+{
+	size_t	col;
+
+	col = 0;
+	while (*left < *right)
+		temp[col++] = s[(*left)++];
+	temp[col] = 0;
+}
+
+void	get_begin_of_word(char const *s, char c, size_t *left)
+{
+	while (s[*left] && s[*left] == c)
+		(*left)++;
+}
+
+void	get_end_of_word(char const *s, char c, size_t *right)
+{
+	while (s[*right] && s[*right] != c)
+		(*right)++;
 }
 
 void	fill_ptr(char **ptr, char const *s, char c)
@@ -52,31 +75,24 @@ void	fill_ptr(char **ptr, char const *s, char c)
 	size_t	left;
 	size_t	right;
 	size_t	row;
-	size_t	col;
 	char	*temp;
 
 	row = 0;
 	left = 0;
 	while (s[left])
 	{
-		while (s[left] && s[left] == c)
-			left++;
+		get_begin_of_word(s, c, &left);
 		if (s[left] == 0)
 			break ;
 		right = left;
-		while (s[right] && s[right] != c)
-			right++;
+		get_end_of_word(s, c, &right);
 		temp = malloc(right - left + 1);
 		if (temp == NULL)
 		{
 			free_ptr(ptr, row);
-			free(ptr);
 			return ;
 		}
-		col = 0;
-		while (left < right)
-			temp[col++] = s[left++];
-		temp[col] = 0;
+		fill_temp(s, temp, &left, &right);
 		ptr[row] = temp;
 		row++;
 	}
