@@ -6,13 +6,13 @@
 /*   By: zech-chi <zech-chi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 19:18:27 by zech-chi          #+#    #+#             */
-/*   Updated: 2023/11/04 19:06:32 by zech-chi         ###   ########.fr       */
+/*   Updated: 2023/11/04 19:34:59 by zech-chi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*calloc(size_t count, size_t size)
+void	*ft_calloc(size_t count, size_t size)
 {
 	void	*ptr;
 
