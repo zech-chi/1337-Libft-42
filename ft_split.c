@@ -6,7 +6,7 @@
 /*   By: zech-chi <zech-chi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/01 23:49:42 by zech-chi          #+#    #+#             */
-/*   Updated: 2023/11/04 19:59:27 by zech-chi         ###   ########.fr       */
+/*   Updated: 2023/11/04 23:11:08 by zech-chi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,53 +48,49 @@ void	free_ptr(char **ptr, size_t size)
 	free(ptr);
 }
 
-void	fill_temp(char const *s, char *temp, size_t *left, size_t *right)
+int	get_current_word(char const *s, char c, size_t *left, char *temp)
 {
+	size_t	right;
 	size_t	col;
 
-	col = 0;
-	while (*left < *right)
-		temp[col++] = s[(*left)++];
-	temp[col] = 0;
-}
-
-void	get_begin_of_word(char const *s, char c, size_t *left)
-{
 	while (s[*left] && s[*left] == c)
 		(*left)++;
-}
-
-void	get_end_of_word(char const *s, char c, size_t *right)
-{
-	while (s[*right] && s[*right] != c)
-		(*right)++;
+	if (s[*left] == 0)
+		return (0);
+	right = *left;
+	while (s[right] && s[right] != c)
+		right++;
+	temp = malloc(right - (*left) + 1);
+	if (temp == NULL)
+		return (-1);
+	col = 0;
+	while (*left < right)
+		temp[col++] = s[(*left)++]; 
+	temp[col] = 0;
+	return (1);
 }
 
 void	fill_ptr(char **ptr, char const *s, char c)
 {
 	size_t	left;
-	size_t	right;
 	size_t	row;
 	char	*temp;
+	int		status;
 
 	row = 0;
 	left = 0;
+	temp = NULL;
 	while (s[left])
 	{
-		get_begin_of_word(s, c, &left);
-		if (s[left] == 0)
+		status = get_current_word(s, c, &left, temp);
+		if (status == 0)
 			break ;
-		right = left;
-		get_end_of_word(s, c, &right);
-		temp = malloc(right - left + 1);
-		if (temp == NULL)
+		else if (status == -1)
 		{
 			free_ptr(ptr, row);
 			return ;
 		}
-		fill_temp(s, temp, &left, &right);
-		ptr[row] = temp;
-		row++;
+		ptr[row++] = temp;
 	}
 	ptr[row] = NULL;
 }
