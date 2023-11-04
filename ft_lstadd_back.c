@@ -1,37 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zech-chi <zech-chi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/02 21:57:20 by zech-chi          #+#    #+#             */
-/*   Updated: 2023/11/05 00:09:08 by zech-chi         ###   ########.fr       */
+/*   Created: 2023/11/04 23:56:39 by zech-chi          #+#    #+#             */
+/*   Updated: 2023/11/04 23:59:11 by zech-chi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putnbr(long long n, int fd)
+void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-	if (n < 0)
-	{
-		ft_putchar_fd('-', fd);
-		n *= -1;
-	}
-	if (n < 10)
-	{
-		ft_putchar_fd(n + '0', fd);
-	}
-	else
-	{
-		ft_putnbr(n / 10, fd);
-		ft_putnbr(n % 10, fd);	
-	}
-	
-}
+	t_list *cur_node;
 
-void	ft_putnbr_fd(int n, int fd)
-{
-	ft_putnbr(n, fd);
+	cur_node = *lst;
+	if (cur_node == NULL)
+	{
+		*lst = new;
+		return ;
+	}
+	while (cur_node->next)
+		cur_node = cur_node->next;
+	cur_node->next = new;
 }
