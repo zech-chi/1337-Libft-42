@@ -6,12 +6,12 @@
 /*   By: zech-chi <zech-chi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/01 23:49:42 by zech-chi          #+#    #+#             */
-/*   Updated: 2023/11/03 19:46:34 by zech-chi         ###   ########.fr       */
+/*   Updated: 2023/11/03 23:47:18 by zech-chi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
+//#include <stdio.h>
 
 int	count_words(char const *s, char c)
 {
@@ -47,7 +47,7 @@ void	free_ptr(char **ptr, size_t size)
 		free(ptr[i++]);
 }
 
-void	fill_ptr(char **ptr, size_t size, char const *s, char c)
+void	fill_ptr(char **ptr, char const *s, char c)
 {
 	size_t	left;
 	size_t	right;
@@ -93,25 +93,25 @@ char	**ft_split(char const *s, char c)
 	if (ptr == NULL)
 		return (NULL);
 
-	fill_ptr(ptr, size, s, c);
+	fill_ptr(ptr, s, c);
 	return (ptr);
 }
 
-int main(int ac, char **av)
-{
-	if (ac != 3)
-		return (0);
+//int main(int ac, char **av)
+//{
+//	if (ac != 3)
+//		return (0);
 	
-	char **ptr = ft_split(av[1], av[2][0]);
+//	char **ptr = ft_split(av[1], av[2][0]);
 	
-	if (ptr == NULL)
-		return (0);
+//	if (ptr == NULL)
+//		return (0);
 	
-	size_t i = 0;
-	while (ptr[i])
-	{
-		printf("\"%s\"\n", ptr[i]);
-		i++;
-	}
-	return (0);
-}
+//	size_t i = 0;
+//	while (ptr[i])
+//	{
+//		printf("\"%s\"\n", ptr[i]);
+//		i++;
+//	}
+//	return (0);
+//}
