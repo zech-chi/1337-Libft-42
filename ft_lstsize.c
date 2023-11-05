@@ -6,7 +6,7 @@
 /*   By: zech-chi <zech-chi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/04 23:33:59 by zech-chi          #+#    #+#             */
-/*   Updated: 2023/11/04 23:36:00 by zech-chi         ###   ########.fr       */
+/*   Updated: 2023/11/05 01:08:57 by zech-chi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 int	ft_lstsize(t_list *lst)
 {
-	t_list *cur_node;
-	int	counter;
+	t_list	*cur_node;
+	int		counter;
 
 	cur_node = lst;
 	counter = 0;

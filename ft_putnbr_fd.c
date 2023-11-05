@@ -6,7 +6,7 @@
 /*   By: zech-chi <zech-chi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 21:57:20 by zech-chi          #+#    #+#             */
-/*   Updated: 2023/11/05 00:09:08 by zech-chi         ###   ########.fr       */
+/*   Updated: 2023/11/05 01:06:16 by zech-chi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,8 @@ void	ft_putnbr(long long n, int fd)
 	else
 	{
 		ft_putnbr(n / 10, fd);
-		ft_putnbr(n % 10, fd);	
+		ft_putnbr(n % 10, fd);
 	}
-	
 }
 
 void	ft_putnbr_fd(int n, int fd)
