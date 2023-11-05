@@ -6,7 +6,7 @@
 /*   By: zech-chi <zech-chi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/01 11:49:46 by zech-chi          #+#    #+#             */
-/*   Updated: 2023/11/01 20:15:58 by zech-chi         ###   ########.fr       */
+/*   Updated: 2023/11/05 01:31:37 by zech-chi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 	size_t	h;
 	size_t	n;
 
+	if (*needle == 0)
+		return ((char *) haystack);
 	h = 0;
 	while (haystack[h] && h < len)
 	{
