@@ -6,7 +6,7 @@
 /*   By: zech-chi <zech-chi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/01 23:49:42 by zech-chi          #+#    #+#             */
-/*   Updated: 2023/11/04 23:11:08 by zech-chi         ###   ########.fr       */
+/*   Updated: 2023/11/05 14:40:15 by zech-chi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,59 +40,53 @@ int	count_words(char const *s, char c)
 
 void	free_ptr(char **ptr, size_t size)
 {
-	size_t	i;
+	size_t	col;
 
-	i = 0;
-	while (i < size)
-		free(ptr[i++]);
+	col = 0;
+	while (col < size)
+		free(ptr[col++]);
 	free(ptr);
 }
 
-int	get_current_word(char const *s, char c, size_t *left, char *temp)
+int	get_left_and_right(size_t *left, size_t *right, char const *s, char c)
 {
-	size_t	right;
-	size_t	col;
-
 	while (s[*left] && s[*left] == c)
-		(*left)++;
+		*left = *left + 1;
 	if (s[*left] == 0)
 		return (0);
-	right = *left;
-	while (s[right] && s[right] != c)
-		right++;
-	temp = malloc(right - (*left) + 1);
-	if (temp == NULL)
-		return (-1);
-	col = 0;
-	while (*left < right)
-		temp[col++] = s[(*left)++]; 
-	temp[col] = 0;
+	*right = *left;
+	while (s[*right] && s[*right] != c)
+		*right = *right + 1;
 	return (1);
 }
 
-void	fill_ptr(char **ptr, char const *s, char c)
+char	**fill_ptr(char **ptr, char const *s, char c)
 {
 	size_t	left;
+	size_t	right;
 	size_t	row;
-	char	*temp;
-	int		status;
+	size_t	col;
 
-	row = 0;
 	left = 0;
-	temp = NULL;
+	row = 0;
 	while (s[left])
 	{
-		status = get_current_word(s, c, &left, temp);
-		if (status == 0)
+		if (get_left_and_right(&left, &right, s, c) == 0)
 			break ;
-		else if (status == -1)
+		ptr[row] = malloc(right - left + 1);
+		if (ptr[row] == NULL)
 		{
 			free_ptr(ptr, row);
-			return ;
+			return (NULL);
 		}
-		ptr[row++] = temp;
+		col = 0;
+		while (left < right)
+			ptr[row][col++] = s[left++];
+		ptr[row][col] = 0;
+		row++;
 	}
-	ptr[row] = NULL;
+	ptr[row] = 0;
+	return (ptr);
 }
 
 char	**ft_split(char const *s, char c)
@@ -104,8 +98,7 @@ char	**ft_split(char const *s, char c)
 	ptr = malloc((size + 1) * sizeof(char *));
 	if (ptr == NULL)
 		return (NULL);
-	fill_ptr(ptr, s, c);
-	return (ptr);
+	return (fill_ptr(ptr, s, c));
 }
 
 //int main(int ac, char **av)
@@ -121,5 +114,6 @@ char	**ft_split(char const *s, char c)
 //		printf("\"%s\"\n", ptr[i]);
 //		i++;
 //	}
+
 //	return (0);
 //}

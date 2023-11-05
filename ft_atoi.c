@@ -6,12 +6,13 @@
 /*   By: zech-chi <zech-chi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 14:45:58 by zech-chi          #+#    #+#             */
-/*   Updated: 2023/10/31 15:58:03 by zech-chi         ###   ########.fr       */
+/*   Updated: 2023/11/05 14:41:14 by zech-chi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
+#include <stdlib.h>
+#include <stdio.h>
 /*
 	this function take a char
 	and return 1 if it is a whitespace 0 otherwise
@@ -78,3 +79,9 @@ int	ft_atoi(const char *str)
 	}
 	return (signe * res);
 }
+
+//int main()
+//{
+//	printf("%d\n", ft_atoi("-756565565554545454545454545454545454545"));
+//	printf("%d\n", atoi("-756565565554545454545454545454545454545"));
+//}
