@@ -6,7 +6,7 @@
 /*   By: zech-chi <zech-chi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 15:13:47 by zech-chi          #+#    #+#             */
-/*   Updated: 2023/11/05 00:20:54 by zech-chi         ###   ########.fr       */
+/*   Updated: 2023/11/05 14:58:14 by zech-chi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,11 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 	unsigned char	*d;
 	unsigned char	*s;
 
-	i = 0;
 	d = (unsigned char *)dst;
 	s = (unsigned char *)src;
+	if (d == NULL && s == NULL)
+		return (NULL);
+	i = 0;
 	while (i < n)
 	{
 		d[i] = s[i];
@@ -33,9 +35,9 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 
 //int main()
 //{
-//	char dest1[30];
-//	char dest2[30];
-//	char src[] = "ijfj difjif id";
+//	char *src = NULL;
+//	char *dest1 = NULL;
+//	char *dest2 = NULL;
 //	ft_memcpy(dest1, src, 12);
 //	memcpy(dest2, src, 12);
 //	printf("my: %s\n", dest1);
