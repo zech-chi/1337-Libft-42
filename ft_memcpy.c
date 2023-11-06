@@ -6,7 +6,7 @@
 /*   By: zech-chi <zech-chi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 15:13:47 by zech-chi          #+#    #+#             */
-/*   Updated: 2023/11/05 14:58:14 by zech-chi         ###   ########.fr       */
+/*   Updated: 2023/11/06 17:08:36 by zech-chi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,3 +55,8 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 //	printf("%s\n", str2);
 //	return (0);
 //}
+int main()
+{
+	char str[] = "jgfj";
+	ft_memcpy(NULL, str, 4); return (0);
+}

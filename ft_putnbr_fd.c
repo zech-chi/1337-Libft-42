@@ -6,13 +6,13 @@
 /*   By: zech-chi <zech-chi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 21:57:20 by zech-chi          #+#    #+#             */
-/*   Updated: 2023/11/05 01:06:16 by zech-chi         ###   ########.fr       */
+/*   Updated: 2023/11/06 20:10:18 by zech-chi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putnbr(long long n, int fd)
+static void	ft_putnbr(long long n, int fd)
 {
 	if (n < 0)
 	{

@@ -6,13 +6,13 @@
 /*   By: zech-chi <zech-chi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/01 23:27:05 by zech-chi          #+#    #+#             */
-/*   Updated: 2023/11/01 23:47:26 by zech-chi         ###   ########.fr       */
+/*   Updated: 2023/11/06 20:12:29 by zech-chi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	is_exist(char const *set, char c)
+static int	is_exist(char const *set, char c)
 {
 	size_t	i;
 
@@ -26,7 +26,7 @@ int	is_exist(char const *set, char c)
 	return (0);
 }
 
-int	get_size(char const *s1, char const *set, size_t *left, size_t *right)
+static int	get_size(char const *s1, char const *set, size_t *left, size_t *right)
 {
 	size_t	s1_len;
 

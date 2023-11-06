@@ -6,13 +6,13 @@
 /*   By: zech-chi <zech-chi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/01 22:55:04 by zech-chi          #+#    #+#             */
-/*   Updated: 2023/11/01 23:20:58 by zech-chi         ###   ########.fr       */
+/*   Updated: 2023/11/06 20:09:27 by zech-chi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	len_of_number(long long n)
+static int	len_of_number(long long n)
 {
 	int	len;
 
@@ -32,7 +32,7 @@ int	len_of_number(long long n)
 	return (len);
 }
 
-char	*fill(char *ptr, long long ln, int size)
+static char	*fill(char *ptr, long long ln, int size)
 {
 	int	i;
 

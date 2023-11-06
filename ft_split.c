@@ -6,14 +6,14 @@
 /*   By: zech-chi <zech-chi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/01 23:49:42 by zech-chi          #+#    #+#             */
-/*   Updated: 2023/11/05 14:40:15 by zech-chi         ###   ########.fr       */
+/*   Updated: 2023/11/06 20:10:58 by zech-chi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 //#include <stdio.h>
 
-int	count_words(char const *s, char c)
+static int	count_words(char const *s, char c)
 {
 	size_t	i;
 	int		counter;
@@ -38,7 +38,7 @@ int	count_words(char const *s, char c)
 	return (counter);
 }
 
-void	free_ptr(char **ptr, size_t size)
+static void	free_ptr(char **ptr, size_t size)
 {
 	size_t	col;
 
@@ -48,7 +48,7 @@ void	free_ptr(char **ptr, size_t size)
 	free(ptr);
 }
 
-int	get_left_and_right(size_t *left, size_t *right, char const *s, char c)
+static int	get_left_and_right(size_t *left, size_t *right, char const *s, char c)
 {
 	while (s[*left] && s[*left] == c)
 		*left = *left + 1;
@@ -60,7 +60,7 @@ int	get_left_and_right(size_t *left, size_t *right, char const *s, char c)
 	return (1);
 }
 
-char	**fill_ptr(char **ptr, char const *s, char c)
+static char	**fill_ptr(char **ptr, char const *s, char c)
 {
 	size_t	left;
 	size_t	right;

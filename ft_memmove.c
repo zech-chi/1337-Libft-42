@@ -6,7 +6,7 @@
 /*   By: zech-chi <zech-chi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/03 22:06:07 by zech-chi          #+#    #+#             */
-/*   Updated: 2023/11/04 19:08:28 by zech-chi         ###   ########.fr       */
+/*   Updated: 2023/11/05 15:29:54 by zech-chi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,19 +19,26 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 {
 	unsigned char	*d;
 	unsigned char	*s;
-	unsigned char	temp[len];
 
 	d = (unsigned char *)dst;
 	s = (unsigned char *)src;
-	ft_memcpy(temp, src, len);
-	ft_memcpy(dst, temp, len);
+	if (s < d && d < s + len)
+	{
+		while (len-- > 0)
+			*(d + len) = *(s + len);
+	}
+	else
+		ft_memcpy(dst, src, len);
 	return (dst);
 }
 
 //int main()
 //{
-//	char str[] = "hello world";
-//	memmove(str + 7, str, 5);
-//	printf("%s\n", str);
+//	char str1[] = "";
+//	char str2[] = "";
+//	//memmove(str1 + 3, str1, 4);
+//	ft_memmove(str2 + 3, str2, 4);
+//	printf("%s\n", str1);
+//	printf("%s\n", str2);
 //	return (0);
 //}

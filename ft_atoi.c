@@ -6,7 +6,7 @@
 /*   By: zech-chi <zech-chi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 14:45:58 by zech-chi          #+#    #+#             */
-/*   Updated: 2023/11/05 14:41:14 by zech-chi         ###   ########.fr       */
+/*   Updated: 2023/11/06 20:08:37 by zech-chi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@
 	'\f': (ascii = 12) The form feed character <advance to the top of the
 		next page> 
 */
-int	ft_isspace(int c)
+static int	ft_isspace(int c)
 {
 	if (c == ' ' || c == '\n'
 		|| c == '\t' || c == '\v'
