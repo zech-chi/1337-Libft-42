@@ -6,7 +6,7 @@
 /*   By: zech-chi <zech-chi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/01 23:49:42 by zech-chi          #+#    #+#             */
-/*   Updated: 2023/11/06 20:10:58 by zech-chi         ###   ########.fr       */
+/*   Updated: 2023/11/07 08:40:51 by zech-chi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,6 +94,8 @@ char	**ft_split(char const *s, char c)
 	size_t	size;
 	char	**ptr;
 
+	if (!s)
+		return (NULL);
 	size = count_words(s, c);
 	ptr = malloc((size + 1) * sizeof(char *));
 	if (ptr == NULL)

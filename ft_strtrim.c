@@ -6,7 +6,7 @@
 /*   By: zech-chi <zech-chi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/01 23:27:05 by zech-chi          #+#    #+#             */
-/*   Updated: 2023/11/06 20:12:29 by zech-chi         ###   ########.fr       */
+/*   Updated: 2023/11/07 08:41:55 by zech-chi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,8 @@ char	*ft_strtrim(char const *s1, char const *set)
 	size_t	right;
 	char	*ptr;
 
+	if (!s1 || !set)
+		return (NULL);
 	size = get_size(s1, set, &left, &right);
 	ptr = malloc(size + 1);
 	if (ptr == NULL)

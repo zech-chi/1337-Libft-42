@@ -6,7 +6,7 @@
 /*   By: zech-chi <zech-chi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/01 22:21:45 by zech-chi          #+#    #+#             */
-/*   Updated: 2023/11/05 15:41:42 by zech-chi         ###   ########.fr       */
+/*   Updated: 2023/11/07 08:58:07 by zech-chi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	size_t	i;
 	char	*ptr;
 
+	if (!s)
+		return (NULL);
 	if (start >= ft_strlen(s))
 	{
 		ptr = malloc(1);

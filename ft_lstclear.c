@@ -6,7 +6,7 @@
 /*   By: zech-chi <zech-chi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/05 00:25:49 by zech-chi          #+#    #+#             */
-/*   Updated: 2023/11/05 01:07:22 by zech-chi         ###   ########.fr       */
+/*   Updated: 2023/11/07 08:52:12 by zech-chi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ void	ft_lstclear(t_list **lst, void (*del)(void*))
 	t_list	*cur_node;
 	t_list	*nxt_node;
 
+	if (!lst || !del)
+		return ;
 	cur_node = *lst;
 	while (cur_node)
 	{

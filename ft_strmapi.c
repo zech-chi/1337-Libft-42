@@ -6,7 +6,7 @@
 /*   By: zech-chi <zech-chi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/03 14:52:15 by zech-chi          #+#    #+#             */
-/*   Updated: 2023/11/06 20:11:44 by zech-chi         ###   ########.fr       */
+/*   Updated: 2023/11/07 08:39:50 by zech-chi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	size_t	i;
 	char	*ptr;
 
+	if (!s)
+		return (NULL);
 	size = ft_strlen(s);
 	ptr = malloc(size + 1);
 	if (ptr == NULL)
