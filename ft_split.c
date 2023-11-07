@@ -6,7 +6,7 @@
 /*   By: zech-chi <zech-chi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/01 23:49:42 by zech-chi          #+#    #+#             */
-/*   Updated: 2023/11/07 15:45:32 by zech-chi         ###   ########.fr       */
+/*   Updated: 2023/11/07 15:51:24 by zech-chi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ static void	free_ptr(char **ptr, size_t size)
 	free(ptr);
 }
 
-static int	get_left_and_right(size_t *left, size_t *right, char const *s, char c)
+static int	get_left_right(size_t *left, size_t *right, char const *s, char c)
 {
 	while (s[*left] && s[*left] == c)
 		*left = *left + 1;
@@ -71,7 +71,7 @@ static char	**fill_ptr(char **ptr, char const *s, char c)
 	row = 0;
 	while (s[left])
 	{
-		if (get_left_and_right(&left, &right, s, c) == 0)
+		if (get_left_right(&left, &right, s, c) == 0)
 			break ;
 		ptr[row] = malloc(right - left + 1);
 		if (ptr[row] == NULL)

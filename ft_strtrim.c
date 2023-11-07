@@ -6,7 +6,7 @@
 /*   By: zech-chi <zech-chi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/01 23:27:05 by zech-chi          #+#    #+#             */
-/*   Updated: 2023/11/07 08:41:55 by zech-chi         ###   ########.fr       */
+/*   Updated: 2023/11/07 15:53:09 by zech-chi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,20 +26,20 @@ static int	is_exist(char const *set, char c)
 	return (0);
 }
 
-static int	get_size(char const *s1, char const *set, size_t *left, size_t *right)
+static int	get_size(char const *s1, char const *set, size_t *l, size_t *r)
 {
 	size_t	s1_len;
 
 	s1_len = ft_strlen(s1);
-	*left = 0;
-	*right = s1_len - 1;
-	while (*left < s1_len && is_exist(set, s1[*left]))
-		*left += 1;
-	if (*left == s1_len)
+	*l = 0;
+	*r = s1_len - 1;
+	while (*l < s1_len && is_exist(set, s1[*l]))
+		*l += 1;
+	if (*l == s1_len)
 		return (0);
-	while (*right >= 0 && is_exist(set, s1[*right]))
-		*right -= 1;
-	return (*right - *left + 1);
+	while (*r >= 0 && is_exist(set, s1[*r]))
+		*r -= 1;
+	return (*r - *l + 1);
 }
 
 char	*ft_strtrim(char const *s1, char const *set)
