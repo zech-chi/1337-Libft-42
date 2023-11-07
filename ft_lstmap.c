@@ -6,7 +6,7 @@
 /*   By: zech-chi <zech-chi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/05 00:50:38 by zech-chi          #+#    #+#             */
-/*   Updated: 2023/11/05 01:08:17 by zech-chi         ###   ########.fr       */
+/*   Updated: 2023/11/07 04:43:35 by zech-chi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,21 +15,22 @@
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
 	t_list	*head;
-	t_list	*cur_node_old;
-	t_list	*cur_node_new;
+	t_list	*savehead;
+	t_list	*old;
+	t_list	*new;
 
 	head = NULL;
-	cur_node_old = lst;
-	while (cur_node_old)
+	
+	old = lst;
+	while (old)
 	{
-		cur_node_new = ft_lstnew((*f)(cur_node_old->content));
-		if (cur_node_new == NULL)
+		new = ft_lstnew((*f)(old->content));
+		if (new == NULL)
 		{
-			ft_lstclear(&head, del);
-			return (NULL);
+			ft_lstclear(&head, del); return (NULL);
 		}
-		ft_lstadd_back(&head, cur_node_new);
-		cur_node_old = cur_node_old->next;
+		ft_lstadd_back(&head, new);
+		old = old->next;
 	}
 	return (head);
 }
