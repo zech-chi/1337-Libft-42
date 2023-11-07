@@ -6,14 +6,11 @@
 /*   By: zech-chi <zech-chi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/03 22:06:07 by zech-chi          #+#    #+#             */
-/*   Updated: 2023/11/05 15:29:54 by zech-chi         ###   ########.fr       */
+/*   Updated: 2023/11/07 08:13:23 by zech-chi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
 
 void	*ft_memmove(void *dst, const void *src, size_t len)
 {
@@ -31,14 +28,3 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 		ft_memcpy(dst, src, len);
 	return (dst);
 }
-
-//int main()
-//{
-//	char str1[] = "";
-//	char str2[] = "";
-//	//memmove(str1 + 3, str1, 4);
-//	ft_memmove(str2 + 3, str2, 4);
-//	printf("%s\n", str1);
-//	printf("%s\n", str2);
-//	return (0);
-//}
