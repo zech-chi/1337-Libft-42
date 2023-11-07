@@ -6,7 +6,7 @@
 /*   By: zech-chi <zech-chi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 14:45:58 by zech-chi          #+#    #+#             */
-/*   Updated: 2023/11/07 15:58:48 by zech-chi         ###   ########.fr       */
+/*   Updated: 2023/11/07 18:46:30 by zech-chi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,10 +26,12 @@ int	ft_atoi(const char *str)
 	int	res;
 	int	signe;
 	int	i;
+	int	count_digits;
 
 	res = 0;
 	signe = 1;
 	i = 0;
+	count_digits = 0;
 	while (str[i] && ft_isspace(str[i]))
 		i++;
 	if (str[i] == '+' || str[i] == '-')
