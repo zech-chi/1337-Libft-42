@@ -6,7 +6,7 @@
 /*   By: zech-chi <zech-chi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/05 00:50:38 by zech-chi          #+#    #+#             */
-/*   Updated: 2023/11/07 07:47:09 by zech-chi         ###   ########.fr       */
+/*   Updated: 2023/11/07 09:17:21 by zech-chi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	t_list	*new;
 
 	head = NULL;
-	
+	new = NULL;
 	old = lst;
 	while (old)
 	{
