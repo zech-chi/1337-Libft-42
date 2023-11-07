@@ -6,12 +6,11 @@
 /*   By: zech-chi <zech-chi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/04 22:52:43 by zech-chi          #+#    #+#             */
-/*   Updated: 2023/11/07 15:44:55 by zech-chi         ###   ########.fr       */
+/*   Updated: 2023/11/07 16:18:52 by zech-chi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-//#include <stdio.h>
 
 t_list	*ft_lstnew(void *content)
 {

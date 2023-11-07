@@ -6,7 +6,7 @@
 /*   By: zech-chi <zech-chi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 14:45:58 by zech-chi          #+#    #+#             */
-/*   Updated: 2023/11/07 15:44:10 by zech-chi         ###   ########.fr       */
+/*   Updated: 2023/11/07 15:58:48 by zech-chi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,9 +39,6 @@ int	ft_atoi(const char *str)
 		i++;
 	}
 	while (str[i] && '0' <= str[i] && str[i] <= '9')
-	{
-		res = 10 * res + str[i] - '0';
-		i++;
-	}
+		res = 10 * res + str[i++] - '0';
 	return (signe * res);
 }
