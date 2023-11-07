@@ -6,26 +6,12 @@
 /*   By: zech-chi <zech-chi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 14:45:58 by zech-chi          #+#    #+#             */
-/*   Updated: 2023/11/06 20:08:37 by zech-chi         ###   ########.fr       */
+/*   Updated: 2023/11/07 15:44:10 by zech-chi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdlib.h>
-#include <stdio.h>
-/*
-	this function take a char
-	and return 1 if it is a whitespace 0 otherwise
-	' ' : (ascii == 32) space 
-	'\n': (ascii == 10) newline 
-	'\t': (ascii == 9) tab 
-	'\v': (ascii == 11) virtical tab 
-	'\r': (ascii == 13) carriage return <he carriage return character is used 
-		to move the cursor or print head back to the beginning of the current 
-		line or text> 
-	'\f': (ascii = 12) The form feed character <advance to the top of the
-		next page> 
-*/
+
 static int	ft_isspace(int c)
 {
 	if (c == ' ' || c == '\n'
@@ -35,26 +21,6 @@ static int	ft_isspace(int c)
 	return (0);
 }
 
-/*
-	1)
-	signe == 1 ---> result positive
-	signe == -1 ---> result negative
-
-	2)
-	res = wxyz {
-		w = 10 * 10 * 10
-	+	x * 10 * 10
-	+ 	y * 10
-	+   z 
-	}
-
-	3)
-	'0' - '0' = 0
-	'1' - '0' = 1
-	'2' - '0' = 2
-	'7' - '0' = 7
-	generally : 'n' - '0' = n  ('0' <= n <= '9')
-*/
 int	ft_atoi(const char *str)
 {
 	int	res;
@@ -79,9 +45,3 @@ int	ft_atoi(const char *str)
 	}
 	return (signe * res);
 }
-
-//int main()
-//{
-//	printf("%d\n", ft_atoi("-756565565554545454545454545454545454545"));
-//	printf("%d\n", atoi("-756565565554545454545454545454545454545"));
-//}

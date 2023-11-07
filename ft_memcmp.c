@@ -6,13 +6,11 @@
 /*   By: zech-chi <zech-chi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/03 12:20:38 by zech-chi          #+#    #+#             */
-/*   Updated: 2023/11/04 19:06:55 by zech-chi         ###   ########.fr       */
+/*   Updated: 2023/11/07 15:45:08 by zech-chi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-//#include <string.h>
-//#include <stdio.h>
 
 int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
@@ -31,13 +29,3 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 	}
 	return (0);
 }
-
-//int main()
-//{
-//	int arr1[] = {1, 4, 5, 6, 6};
-//	int arr2[] = {1, 4, 3, 6};
-
-//	printf("my :%d\n", ft_memcmp(arr1, arr2, 4));
-//	printf("ex :%d\n", memcmp(arr1, arr2, 4));
-//	return (0);
-//}
