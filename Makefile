@@ -8,9 +8,9 @@ MANSRCS = ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c \
 			ft_strmapi.c ft_striteri.c ft_putchar_fd.c \
 			ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c
 
-BONSRCS = $(MANSRCS) ft_lstnew.c ft_lstadd_front.c ft_lstsize.c \
-			ft_lstlast.c ft_lstadd_back.c ft_lstdelone.c \
-			ft_lstclear.c ft_lstiter.c ft_lstmap.c
+BONSRCS = $(MANSRCS) ft_lstnew_bonus.c ft_lstadd_front_bonus.c ft_lstsize_bonus.c \
+			ft_lstlast_bonus.c ft_lstadd_back_bonus.c ft_lstdelone_bonus.c \
+			ft_lstclear_bonus.c ft_lstiter_bonus.c ft_lstmap_bonus.c
 
 MANOBJS = $(MANSRCS:.c=.o)
 
@@ -19,21 +19,21 @@ BONOBJS = $(BONSRCS:.c=.o)
 NAME = libft.a
 
 $(NAME): $(MANOBJS)
-	@ar -rcs $(NAME) $^
+	ar -rcs $(NAME) $^
 
-%.o: %.c
-	@cc -Wall -Wextra -Werror -c $< -o $@
+%.o: %.c libft.h
+	cc -Wall -Wextra -Werror -c $< -o $@
 
 all: $(NAME)
 
 bonus: $(BONOBJS)
-	@ar -rcs $(NAME) $^
+	ar -rcs $(NAME) $^
 
 clean:
-	@rm -f *.o
+	rm -f $(BONOBJS)
 
 fclean: clean
-	@rm -f $(NAME)
+	rm -f $(NAME)
 
 re: fclean all
 
